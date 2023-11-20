@@ -6,7 +6,8 @@ import PIL.Image
 import tkinter as tk
 from tkinter import *
 import os.path
-import time
+import credentials
+
 
 ford = {"make":"Ford", "model":"Mustang", "year":1969, "course": 320000,"price": 10000}
 audi = {"make":"Audi", "model":"A4", "year":2004, "course": 120000, "price": 5000}
@@ -35,7 +36,7 @@ def api_responses():
     headers = {
         "accept": "application/json",
         "content-type": "application/json",
-        "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiZTZiNWZiNTgtOTRlYi00ZDlhLWFhMDUtZWM0NzlhMDUwYzlkIiwidHlwZSI6ImFwaV90b2tlbiJ9.yvgZKRHiBXopsNwScWnNDIr57fqH8iE1G-qzvoMAz3k"
+        "authorization": f"Bearer {credentials.EDEN_API_KEY}"
     }
     list_of_responses = []
     list_of_images = []
